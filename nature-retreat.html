@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAS DAUN - Dining in Nature</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#2C4C3B',
+                        leaf: '#4F772D',
+                        earth: '#8B5E3C',
+                        stone: '#F5F5F0',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #2C4C3B;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: rgba(20, 30, 20, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Parallax Utilities */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Leaf Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-stone">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6" id="navbar">
+        <div
+            class="max-w-6xl mx-auto glass rounded-full px-6 py-3 flex justify-between items-center shadow-lg shadow-forest/5">
+            <a href="#" class="text-2xl font-bold font-serif tracking-wider text-forest flex items-center gap-2">
+                <svg class="w-6 h-6 text-leaf" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                </svg>
+                ALAS DAUN
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-forest/80">
+                <a href="#home" class="hover:text-leaf transition">Beranda</a>
+                <a href="#experience" class="hover:text-leaf transition">Suasana</a>
+                <a href="#menu" class="hover:text-leaf transition">Menu Alam</a>
+                <a href="#location" class="hover:text-leaf transition">Lokasi</a>
+            </div>
+
+            <a href="#reserve"
+                class="hidden md:inline-block bg-forest text-stone px-5 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-leaf transition">
+                Reservasi
+            </a>
+
+            <button class="md:hidden text-forest">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="h-screen parallax-bg flex items-center justify-center relative"
+        style="background-image: url('https://images.unsplash.com/photo-1715358954569-5918fcd4e4f3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+
+        <div class="relative z-10 text-center text-white px-4 max-w-3xl mt-16">
+            <span class="uppercase tracking-[0.3em] text-sm md:text-base font-light mb-4 block text-stone/90">Escape to
+                Nature</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl mb-6 font-serif leading-tight drop-shadow-lg">
+                Taste the <br> <span class="italic text-green-200">Freshness</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 text-stone/90 max-w-xl mx-auto">
+                Nikmati kopi dan hidangan organik di tengah kesejukan hutan pinus dan suara gemericik sungai.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu"
+                    class="glass-dark px-8 py-3 rounded-full hover:bg-white/20 transition backdrop-blur-md">Lihat
+                    Menu</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 animate-bounce text-white/70">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-[#F5F5F0] relative overflow-hidden">
+        <img src="https://www.pngmart.com/files/1/Green-Leaves-PNG-File.png"
+            class="absolute -top-10 -left-10 w-64 opacity-10 rotate-45 pointer-events-none float-anim">
+
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl text-forest mb-4">Our Sanctuary</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tempat di mana waktu berjalan lebih lambat. Kami menyajikan
+                    lebih dari sekadar makanan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative group h-[400px] rounded-[2rem] overflow-hidden shadow-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596131499577-3e11075775f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-forest/90 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl text-white italic mb-2">River View</h3>
+                        <p
+                            class="text-white/80 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                            Meja tepat di pinggir sungai dengan suara air yang menenangkan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group h-[400px] md:-mt-12 rounded-[2rem] overflow-hidden shadow-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-forest/90 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl text-white italic mb-2">Organic Farm</h3>
+                        <p
+                            class="text-white/80 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                            Bahan sayuran dipetik langsung dari kebun hidroponik kami.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group h-[400px] rounded-[2rem] overflow-hidden shadow-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-forest/90 to-transparent flex flex-col justify-end p-8">
+                        <h3 class="text-2xl text-white italic mb-2">Forest Deck</h3>
+                        <p
+                            class="text-white/80 text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                            Nikmati senja di deck kayu yang dikelilingi pohon pinus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 parallax-bg relative"
+        style="background-image: url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-forest/40 backdrop-blur-[2px]"></div>
+
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="text-center mb-10">
+                    <span class="text-leaf uppercase tracking-widest text-xs font-bold">From the Earth</span>
+                    <h2 class="text-4xl md:text-5xl text-forest mt-2">Signature Menu</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3
+                            class="text-2xl font-serif text-forest border-b border-forest/10 pb-3 mb-6 flex items-center gap-2">
+                            <span class="text-3xl">☕</span> Forest Brews
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Pine Cone Latte</h4>
+                                    <p class="text-xs text-gray-600">Infused rosemary syrup, espresso, oat milk.</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">35k</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Ginger Flower Tea</h4>
+                                    <p class="text-xs text-gray-600">Local kecombrang, honey, lemongrass.</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">28k</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Manual Brew V60</h4>
+                                    <p class="text-xs text-gray-600">Local Arabica beans (Gunung Halu).</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">32k</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3
+                            class="text-2xl font-serif text-forest border-b border-forest/10 pb-3 mb-6 flex items-center gap-2">
+                            <span class="text-3xl">🍲</span> Rustic Kitchen
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Nasi Goreng Kecombrang</h4>
+                                    <p class="text-xs text-gray-600">Aromatic fried rice, salted fish, organic egg.</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">45k</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Grilled River Fish</h4>
+                                    <p class="text-xs text-gray-600">Fresh catch, sambal matah, cassava leaves.</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">65k</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-forest">Cassava Cheese Fries</h4>
+                                    <p class="text-xs text-gray-600">Fried cassava chunks, cheddar melt.</p>
+                                </div>
+                                <span class="font-serif text-lg font-bold text-leaf">25k</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="#"
+                        class="inline-block border border-forest text-forest px-6 py-2 rounded-full hover:bg-forest hover:text-white transition text-sm">Download
+                        Full Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="bg-forest text-stone pt-20 pb-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-4xl font-serif mb-6">Visit Us</h2>
+                <p class="mb-8 font-light text-stone/80 leading-relaxed">
+                    Tersembunyi di kaki gunung, jauh dari hiruk pikuk kota.
+                    Akses jalan sudah aspal mulus, parkir luas tersedia untuk mobil dan motor.
+                </p>
+
+                <div class="space-y-4 font-light">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📍</span>
+                        <p>Jl. Raya Puncak Km. 80, Cisarua<br>Bogor, Jawa Barat</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">⏰</span>
+                        <p>
+                            Weekdays: 09:00 - 20:00<br>
+                            Weekends: 07:00 - 22:00
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📞</span>
+                        <p>+62 856 1234 5678 (WA Only)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-stone/10 p-2 rounded-2xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0!2d106.8!3d-6.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnMDAuMCJTIDEwNsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1600000000000!5m2!1sen!2sid"
+                    width="100%" height="300" style="border:0; border-radius: 1rem; filter: contrast(0.8) sepia(0.2);"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+                <div class="mt-4 text-center">
+                    <a href="#reserve"
+                        class="block w-full bg-stone text-forest font-bold py-3 rounded-xl hover:bg-white transition">Book
+                        a Table Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-20 pt-8 border-t border-white/10 text-xs opacity-50">
+            &copy; 2025 Alas Daun Nature Dining. Created with ❤ by Gemini.
+        </div>
+    </section>
+
+</body>
+
+</html>

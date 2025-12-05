@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEN SUSHI - Omakase & Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;700;900&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sumi': '#0F0F10', /* Ink Black */
+                        'akai': '#E63946', /* Salmon Red */
+                        'rice': '#F1FAEE',
+                        'nori': '#1D3557',
+                    },
+                    fontFamily: {
+                        'jp': ['Noto Serif JP', 'serif'],
+                        'sans': ['Outfit', 'sans-serif'],
+                    },
+                    writingMode: {
+                        'vertical': 'vertical-rl',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F0F10;
+            color: #F1FAEE;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Typography Utility for Vertical Text */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Custom Cursor (Optional Vibe) */
+        .chopstick-hover:hover {
+            cursor: cell;
+            /* Just a placeholder for "precision" feel */
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 250px);
+            }
+
+            .bento-1 {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            /* Large Square */
+            .bento-2 {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            /* Wide */
+            .bento-3 {
+                grid-column: span 1;
+                grid-row: span 2;
+            }
+
+            /* Tall */
+            .bento-4 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            /* Small */
+            .bento-5 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            /* Small */
+            .bento-6 {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            /* Wide Bottom */
+        }
+    </style>
+</head>
+
+<body class="flex flex-col md:flex-row min-h-screen">
+
+    <nav
+        class="md:w-24 md:h-screen w-full h-16 bg-sumi border-r border-gray-800 fixed md:sticky bottom-0 md:top-0 z-50 flex md:flex-col justify-between items-center py-4 md:py-8 px-6 md:px-0">
+        <div class="font-jp font-black text-2xl md:text-3xl tracking-tighter text-akai md:mb-8">
+            <span class="md:hidden">ZEN.</span>
+            <span class="hidden md:block vertical-text h-auto">ZEN</span>
+        </div>
+
+        <div class="flex md:flex-col gap-8 md:gap-12 items-center justify-center flex-1">
+            <a href="#home" class="text-gray-500 hover:text-white transition group relative">
+                <span class="hidden md:block vertical-text text-xs tracking-widest uppercase">Home</span>
+                <span class="md:hidden text-sm font-bold">Home</span>
+                <span
+                    class="absolute -right-3 top-1/2 w-1 h-1 bg-akai rounded-full opacity-0 group-hover:opacity-100 transition"></span>
+            </a>
+            <a href="#omakase" class="text-gray-500 hover:text-white transition group relative">
+                <span class="hidden md:block vertical-text text-xs tracking-widest uppercase">Omakase</span>
+                <span class="md:hidden text-sm font-bold">Menu</span>
+            </a>
+            <a href="#gallery" class="text-gray-500 hover:text-white transition group relative">
+                <span class="hidden md:block vertical-text text-xs tracking-widest uppercase">Gallery</span>
+                <span class="md:hidden text-sm font-bold">Look</span>
+            </a>
+        </div>
+
+        <a href="#reserve"
+            class="md:mt-auto bg-akai text-white p-3 rounded-full hover:bg-red-700 transition shadow-lg shadow-red-900/50">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+        </a>
+    </nav>
+
+    <main class="flex-1 w-full md:pl-0 mb-16 md:mb-0">
+
+        <section id="home" class="relative h-screen w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                    class="w-full h-full object-cover brightness-50 scale-105" alt="Sushi Art">
+            </div>
+
+            <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-24">
+                <h2 class="font-jp text-akai text-xl md:text-2xl mb-4 tracking-[0.3em]">いらっしゃいませ</h2>
+                <h1
+                    class="font-jp font-black text-6xl md:text-9xl text-white leading-none mix-blend-overlay opacity-90">
+                    ZEN <br> SUSHI
+                </h1>
+                <p class="mt-8 text-gray-300 max-w-md border-l-2 border-akai pl-6 text-lg">
+                    Experience the art of Edomae sushi. <br>
+                    Fresh from Toyosu Market to your plate.
+                </p>
+            </div>
+
+            <div class="absolute bottom-10 right-10 animate-bounce hidden md:block">
+                <span class="vertical-text text-xs tracking-widest text-gray-400">SCROLL DOWN</span>
+            </div>
+        </section>
+
+        <section id="omakase" class="py-24 px-6 md:px-20 bg-sumi">
+            <div class="flex flex-col md:flex-row gap-16">
+
+                <div class="hidden md:block w-12 pt-10">
+                    <h2
+                        class="vertical-text text-5xl font-jp font-bold text-gray-800 uppercase tracking-widest select-none">
+                        Menu Selection
+                    </h2>
+                </div>
+
+                <h2 class="md:hidden text-3xl font-jp font-bold text-white mb-4">OUR SELECTION</h2>
+
+                <div class="flex-1">
+                    <div class="flex gap-8 border-b border-gray-800 pb-4 mb-12">
+                        <button class="text-akai font-bold text-lg">Omakase</button>
+                        <button class="text-gray-600 hover:text-white transition">Nigiri</button>
+                        <button class="text-gray-600 hover:text-white transition">Sashimi</button>
+                    </div>
+
+                    <div class="space-y-12">
+                        <div class="flex flex-col md:flex-row gap-6 items-center group">
+                            <div class="w-full md:w-48 h-32 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="flex-1 w-full text-center md:text-left">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h3 class="text-2xl font-jp font-bold text-white">The Zen Omakase</h3>
+                                    <span class="text-akai font-mono text-lg">IDR 1.200K</span>
+                                </div>
+                                <p class="text-gray-500 text-sm mb-3">12 pieces of seasonal premium nigiri, appetizer,
+                                    soup, and dessert.</p>
+                                <span class="text-xs border border-gray-700 text-gray-400 px-2 py-1 rounded">Chef's
+                                    Choice</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-6 items-center group">
+                            <div class="w-full md:w-48 h-32 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="flex-1 w-full text-center md:text-left">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h3 class="text-2xl font-jp font-bold text-white">Salmon Lover Set</h3>
+                                    <span class="text-akai font-mono text-lg">IDR 250K</span>
+                                </div>
+                                <p class="text-gray-500 text-sm mb-3">5 Salmon Nigiri, 3 Salmon Belly Sashimi, 1 Spicy
+                                    Salmon Roll.</p>
+                                <span class="text-xs border border-gray-700 text-gray-400 px-2 py-1 rounded">Best
+                                    Seller</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-6 items-center group">
+                            <div class="w-full md:w-48 h-32 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1617196019294-dc44df5b18a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="flex-1 w-full text-center md:text-left">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h3 class="text-2xl font-jp font-bold text-white">Unagi Don</h3>
+                                    <span class="text-akai font-mono text-lg">IDR 180K</span>
+                                </div>
+                                <p class="text-gray-500 text-sm mb-3">Grilled freshwater eel with sweet tare sauce over
+                                    rice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-12 md:py-24 px-6 md:px-20 bg-[#121213]">
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="hidden md:block w-12 pt-10">
+                    <h2
+                        class="vertical-text text-5xl font-jp font-bold text-gray-800 uppercase tracking-widest select-none">
+                        Visual Diary
+                    </h2>
+                </div>
+
+                <div class="flex-1">
+                    <h2 class="md:hidden text-3xl font-jp font-bold text-white mb-8">GALLERY</h2>
+
+                    <div class="bento-grid">
+                        <div class="bento-1 rounded-2xl overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                            <div class="absolute bottom-4 left-4 bg-akai text-white text-xs px-2 py-1 font-bold">FRESH
+                            </div>
+                        </div>
+                        <div class="bento-2 rounded-2xl overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1583623025817-d180a2221d0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="bento-3 rounded-2xl overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div
+                            class="bento-4 rounded-2xl bg-gray-900 flex items-center justify-center p-6 text-center border border-gray-800">
+                            <div>
+                                <h4 class="text-akai font-bold text-4xl mb-2">4.9</h4>
+                                <p class="text-gray-400 text-xs">Google Reviews</p>
+                            </div>
+                        </div>
+                        <div class="bento-5 rounded-2xl overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="bento-6 rounded-2xl overflow-hidden relative group">
+                            <div class="absolute inset-0 bg-red-900/20 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 flex items-center justify-center z-20">
+                                <span
+                                    class="font-jp text-2xl text-white tracking-widest border border-white px-6 py-2 backdrop-blur-sm">VIEW
+                                    FULL MENU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reserve" class="py-24 px-6 md:px-20 bg-sumi border-t border-gray-900">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-akai tracking-[0.3em] text-sm font-bold uppercase">Booking</span>
+                <h2 class="font-jp text-4xl md:text-5xl text-white mt-4 mb-10">Reserve Your Table</h2>
+
+                <div class="bg-[#18181b] p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-800">
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="text-left">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Name</label>
+                            <input type="text"
+                                class="w-full bg-sumi border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-akai focus:outline-none focus:ring-1 focus:ring-akai transition">
+                        </div>
+                        <div class="text-left">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">WhatsApp</label>
+                            <input type="tel"
+                                class="w-full bg-sumi border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-akai focus:outline-none focus:ring-1 focus:ring-akai transition">
+                        </div>
+                        <div class="text-left">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Date</label>
+                            <input type="date"
+                                class="w-full bg-sumi border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-akai focus:outline-none focus:ring-1 focus:ring-akai transition">
+                        </div>
+                        <div class="text-left">
+                            <label class="block text-gray-500 text-xs uppercase tracking-wider mb-2">Guests</label>
+                            <select
+                                class="w-full bg-sumi border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-akai focus:outline-none focus:ring-1 focus:ring-akai transition">
+                                <option>2 People</option>
+                                <option>4 People</option>
+                                <option>Counter Seat (Omakase)</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2 mt-4">
+                            <button
+                                class="w-full bg-akai text-white font-bold py-4 rounded-lg hover:bg-red-700 transition tracking-widest shadow-[0_0_20px_rgba(230,57,70,0.3)]">
+                                CONFIRM RESERVATION
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="mt-20 text-center text-gray-600 text-sm">
+                <p class="font-jp">ZEN SUSHI © 2025</p>
+                <div class="flex justify-center gap-4 mt-4">
+                    <a href="#" class="hover:text-akai">Instagram</a>
+                    <a href="#" class="hover:text-akai">Google Maps</a>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

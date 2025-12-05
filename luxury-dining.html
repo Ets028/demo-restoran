@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE OAK - Fine Steak & Grill</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        surface: '#121212',
+                        gold: '#D4AF37', /* Metallic Gold */
+                        goldhover: '#B5952F',
+                        muted: '#888888',
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        body: ['Raleway', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Menu Dots Leader */
+        .menu-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #444;
+            margin: 0 1rem;
+            position: relative;
+            top: -5px;
+        }
+
+        /* Fade Up Animation Class */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-dark/80 backdrop-blur-md border-b border-white/5 py-4"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] uppercase font-semibold text-gray-400">
+                <a href="#about" class="hover:text-gold transition">The Story</a>
+                <a href="#menu" class="hover:text-gold transition">Menu</a>
+            </div>
+
+            <a href="#"
+                class="text-3xl font-display font-bold text-white tracking-widest border-2 border-gold px-4 py-1 my-2 md:my-0">
+                THE OAK
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] uppercase font-semibold text-gray-400">
+                <a href="#gallery" class="hover:text-gold transition">Gallery</a>
+                <a href="#reserve" class="text-gold hover:text-white transition">Reservations</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                class="w-full h-full object-cover opacity-60 scale-105 animate-[pulse_10s_ease-in-out_infinite]"
+                alt="Fine Dining Background">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 fade-up">
+            <p class="text-gold tracking-[0.3em] uppercase text-sm mb-4 font-semibold">Premium Steak & Grill</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">
+                Taste the <br> <span class="italic text-gray-400">Excellence</span>
+            </h1>
+            <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+            <a href="#reserve"
+                class="inline-block border border-gold text-gold px-8 py-3 text-sm tracking-[0.2em] hover:bg-gold hover:text-dark transition duration-300 uppercase">
+                Book a Table
+            </a>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 bg-surface relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-pattern opacity-5"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase block mb-4">Since 2015</span>
+            <h2 class="text-3xl md:text-4xl text-white mb-8 font-display">A Culinary Masterpiece</h2>
+            <p class="text-gray-400 leading-8 text-lg font-light mb-12">
+                "The Oak bukan sekadar tempat makan, melainkan sebuah teater rasa.
+                Kami menghidangkan daging sapi Wagyu pilihan yang di-aging selama 45 hari,
+                dipadukan dengan teknik panggang klasik di atas kayu ek (oak wood) untuk aroma smokey yang otentik."
+            </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png"
+                class="h-12 mx-auto filter invert opacity-50" alt="Chef Signature">
+            <p class="text-xs text-gray-500 mt-2 tracking-widest uppercase">Executive Chef</p>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-dark">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl text-white font-display mb-2">Our Menu</h2>
+                <p class="text-gray-500 italic font-light">Experience flavors redefined.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+
+                <div class="fade-up">
+                    <h3 class="text-2xl text-gold font-display border-b border-gray-800 pb-4 mb-8">Starters</h3>
+
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Beef
+                                    Carpaccio</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">125k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">Thinly sliced raw beef, truffle oil,
+                                parmesan.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Pan Seared
+                                    Scallop</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">145k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">Cauliflower purée, crispy pancetta, lemon
+                                butter.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Bone
+                                    Marrow</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">95k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">Roasted garlic, herbs, sourdough toast.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-up" style="transition-delay: 200ms;">
+                    <h3 class="text-2xl text-gold font-display border-b border-gray-800 pb-4 mb-8">Main Course</h3>
+
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Wagyu Ribeye
+                                    A5</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">850k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">200g Japanese Wagyu, truffle mash, red wine
+                                jus.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Lamb
+                                    Rack</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">320k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">Herb crusted, ratatouille, rosemary sauce.
+                            </p>
+                        </div>
+                        <div class="group">
+                            <div class="flex justify-between items-end text-lg">
+                                <span class="text-gray-200 font-display group-hover:text-gold transition">Salmon En
+                                    Croute</span>
+                                <div class="menu-dots"></div>
+                                <span class="text-gold">210k</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1 font-light">Spinach cream, puff pastry, dill sauce.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-16">
+                <button
+                    class="text-xs text-gray-500 hover:text-white tracking-[0.2em] uppercase border-b border-gray-700 pb-1 hover:border-white transition">View
+                    Full Wine List</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-[400px] w-full bg-fixed bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+        <div class="h-full w-full bg-black/60 flex items-center justify-center">
+            <h3 class="text-4xl md:text-5xl font-display text-white italic">"Perfection in every bite."</h3>
+        </div>
+    </div>
+
+    <section id="reserve" class="py-24 bg-surface">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl text-gold font-display mb-2">Reservations</h2>
+            <p class="text-gray-400 text-sm mb-10">Book your table for an unforgettable evening.</p>
+
+            <form class="space-y-6 fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Name"
+                        class="w-full bg-dark border border-gray-800 text-white px-4 py-3 focus:outline-none focus:border-gold transition placeholder-gray-600">
+                    <input type="text" placeholder="Phone (WhatsApp)"
+                        class="w-full bg-dark border border-gray-800 text-white px-4 py-3 focus:outline-none focus:border-gold transition placeholder-gray-600">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <input type="date"
+                        class="w-full bg-dark border border-gray-800 text-gray-400 px-4 py-3 focus:outline-none focus:border-gold transition">
+                    <input type="time"
+                        class="w-full bg-dark border border-gray-800 text-gray-400 px-4 py-3 focus:outline-none focus:border-gold transition">
+                    <select
+                        class="w-full bg-dark border border-gray-800 text-gray-400 px-4 py-3 focus:outline-none focus:border-gold transition">
+                        <option>2 Guests</option>
+                        <option>4 Guests</option>
+                        <option>Private Room</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full md:w-auto px-12 py-4 bg-gold text-dark font-bold tracking-[0.2em] uppercase hover:bg-white transition duration-500 mt-4">
+                    Confirm Booking
+                </button>
+            </form>
+
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <p class="text-white font-display text-lg mb-2">THE OAK JAKARTA</p>
+                <p class="text-gray-500 text-sm">Sudirman Central Business District (SCBD), Lot 8.</p>
+                <a href="#" class="text-gold text-xs tracking-widest mt-4 inline-block hover:underline">OPEN IN MAPS</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-12 border-t border-gray-900 text-center">
+        <div class="text-gray-600 text-xs tracking-widest uppercase">
+            &copy; 2025 The Oak Steakhouse. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for Fade Up effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    </script>
+</body>
+
+</html>
